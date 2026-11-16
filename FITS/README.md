@@ -61,10 +61,24 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Tentang Project Ini
 
-### Nama Aplikasi
-**FITS (Find Items in ITS)**
+# FITS — Find Items in ITS
 
-FITS merupakan platform lost & found terpadu untuk sivitas akademika ITS. Aplikasi ini dirancang untuk membantu pengguna melaporkan barang hilang maupun barang temuan, menelusuri barang temuan, mengajukan klaim kepemilikan, serta memantau perkembangan laporan dan notifikasi dalam satu sistem.
+FITS merupakan platform *lost and found* terpadu untuk sivitas akademika Institut Teknologi Sepuluh Nopember (ITS). Aplikasi ini dirancang untuk membantu pengguna melaporkan barang hilang dan barang temuan, mencari barang, mengajukan klaim kepemilikan, serta memantau status laporan dan notifikasi.
+
+Proyek ini dikembangkan untuk mata kuliah **Perancangan dan Pengembangan Perangkat Lunak (PPPL)** menggunakan **ICONIX Process**, yang mencakup pemodelan use case, robustness analysis, sequence diagram, dan implementasi.
+
+## Cakupan Pengembangan
+
+Berikut merupakan cakupan fitur yang direncanakan. Daftar ini tidak menyatakan bahwa seluruh fitur sudah selesai diimplementasikan.
+
+- Autentikasi melalui MyITS SSO.
+- Beranda dengan ringkasan aktivitas pengguna.
+- Pelaporan kehilangan barang dan barang temuan.
+- Informasi serta rekomendasi pos penyerahan barang (*drop-off*).
+- Pencarian barang temuan berdasarkan kategori dan filter.
+- Pencocokan barang melalui AI Assist.
+- Pengajuan klaim dan verifikasi kepemilikan barang.
+- Riwayat status laporan dan notifikasi.
 
 ### Anggota Kelompok dan bagiannya
 
