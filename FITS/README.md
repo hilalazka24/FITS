@@ -56,3 +56,62 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+## Tentang Project Ini
+
+### Nama Aplikasi
+**FITS (Find Items in ITS)**
+
+FITS merupakan platform lost & found terpadu untuk sivitas akademika ITS. Aplikasi ini dirancang untuk membantu pengguna melaporkan barang hilang maupun barang temuan, menelusuri barang temuan, mengajukan klaim kepemilikan, serta memantau perkembangan laporan dan notifikasi dalam satu sistem.
+
+### Anggota Kelompok dan bagiannya
+
+- **Alwida Rahmat (5026241090)** — Mengajukan klaim barang dan melihat notifikasi.
+- **Miftahul Arifin Sofyan (5026241162)** — Masuk melalui MyITS SSO, masuk ke beranda ringkasan aktivitas, serta melihat laporan barang-barang kehilangan dan riwayat status laporan.
+- **Adelia Maritza Rani (5026241120)** — Melaporkan kehilangan barang dan melihat ringkasan aktivitas.
+- **Ahmad 'Aaqila Akbar (5026241128)** — Melaporkan barang temuan, termasuk rekomendasi pos penyerahan (drop-off) terdekat.
+- **Athallah Hilman Hilalazka (5036341145)** — Menelusuri dan mencari barang temuan berdasarkan kategori/filter, mencari kecocokan menggunakan AI Assist, serta melihat detail barang temuan.
+
+## Cara Setup Project
+
+### Prasyarat
+Pastikan perangkat sudah memiliki:
+- PHP **8.3 atau lebih baru**.
+- Composer.
+- Node.js dan npm.
+- Ekstensi PHP SQLite/PDO SQLite aktif.
+
+### Langkah Instalasi
+1. Masuk ke direktori aplikasi:
+   cd FITS
+2. Install dependency PHP:
+   composer install
+3. Buat file konfigurasi environment:
+   cp .env.example .env
+   Untuk Windows PowerShell, gunakan:
+   Copy-Item .env.example .env
+4. Buat file database SQLite:
+   touch database/database.sqlite
+   Untuk Windows PowerShell, gunakan:
+   New-Item -ItemType File -Path database/database.sqlite -Force
+5. Generate application key:
+   php artisan key:generate
+6. Jalankan migration dan seeder:
+   php artisan migrate --seed
+   Konfigurasi `.env.example` sudah menggunakan SQLite (`DB_CONNECTION=sqlite`). Apabila konfigurasi database diubah, sesuaikan kembali nilai `DB_*` pada file `.env`.
+7. Install dependency frontend dan build asset:
+   npm install
+   npm run build
+
+### Menjalankan Aplikasi dalam Mode Development
+Jalankan server Laravel:
+php artisan serve
+
+Kemudian, pada terminal lain di direktori project yang sama, jalankan Vite:
+npm run dev
+
+Aplikasi dapat diakses melalui alamat yang ditampilkan oleh Laravel, secara default:
+http://127.0.0.1:8000
+
