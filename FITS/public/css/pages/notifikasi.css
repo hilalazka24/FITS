@@ -1,0 +1,125 @@
+.notifikasi {
+    padding-top: 8px;
+}
+
+.notifikasi-group {
+    margin: 20px 0 14px;
+    color: #374151;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+}
+
+.notif {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 0 12px;
+    padding: 16px 16px 16px 18px;
+    background: var(--color-white);
+    border-left: 4px solid #7a6a00;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0f1b330d;
+}
+
+.notif + .notif {
+    margin-top: 12px;
+}
+
+.notif__icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+}
+
+.notif__icon .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.notif__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.notif__head h3 {
+    margin: 6px 0 0;
+    color: var(--color-title);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.notif__head time {
+    flex-shrink: 0;
+    color: #374151;
+    font-size: 11px;
+}
+
+.notif__body p {
+    margin: 6px 0 0;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 19px;
+}
+
+.notif__actions {
+    display: flex;
+    grid-column: 1 / -1;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.notif__actions .button {
+    flex: 1;
+    min-height: 30px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    box-shadow: none;
+}
+
+.notif__actions .button-outline {
+    border-width: 1px;
+}
+
+.notif--found .notif__icon {
+    color: #5c4a00;
+    background: #fdf0c2;
+}
+
+.notif--found .notif__icon .icon {
+    fill: #a17d00;
+}
+
+.notif--update {
+    border-left-color: #1d5fc4;
+}
+
+.notif--update .notif__icon {
+    color: var(--color-white);
+    background: #e6ecf8;
+}
+
+.notif--update .notif__icon .icon {
+    color: #1d5fc4;
+}
+
+.notif--warning {
+    border-left-color: var(--color-danger);
+}
+
+.notif--warning .notif__icon {
+    color: var(--color-danger);
+    background: #fde4e4;
+}
+
+.notif--match {
+    border-left-color: #2e3338;
+}
+
+.notif--match .notif__icon {
+    color: #2e3338;
+    background: #eceef1;
+}
