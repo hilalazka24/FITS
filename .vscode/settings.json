@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.cwd": "${workspaceFolder}/FITS",
+    "terminal.integrated.env.windows": {
+        "Path": "${workspaceFolder}\\FITS\\.runtime\\php;${env:Path}"
+    }
+}

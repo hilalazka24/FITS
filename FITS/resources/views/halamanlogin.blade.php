@@ -28,7 +28,7 @@
         </section>
 
         <section class="login-card" aria-label="Form login MyITS">
-            <form id="login-form" method="post" action="{{ route('login') }}">
+            <form id="login-form" method="post" action="{{ route('login') }}" data-redirect="{{ route('beranda') }}">
                 @csrf
                 <div class="form-field">
                     <label class="form-label" for="identity">NRP / Email ITS</label>

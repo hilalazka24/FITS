@@ -22,6 +22,11 @@
         event.preventDefault();
         password.value = '';
         showStatus('Ini adalah preview GUI. Login MyITS SSO belum terhubung; data login tidak dikirim.');
+
+        // Preview: lanjut ke Beranda supaya alur halaman bisa dicoba.
+        if (form.dataset.redirect) {
+            window.location.href = form.dataset.redirect;
+        }
     });
 
     document.getElementById('forgot-password').addEventListener('click', () => {
@@ -35,6 +40,6 @@
             return;
         }
 
-        showStatus('Halaman sebelumnya belum dibuat. Saat ini hanya halaman login yang tersedia.');
+        showStatus('Halaman pembuka belum ada desainnya di Figma.');
     });
 })();
