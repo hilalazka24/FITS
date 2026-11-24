@@ -1,0 +1,156 @@
+.beranda {
+    padding-top: 12px;
+}
+
+.beranda-greeting h1 {
+    margin: 0;
+    color: var(--color-title);
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.beranda-greeting p {
+    margin: 2px 0 0;
+    color: #5b6372;
+    font-size: 14px;
+}
+
+.beranda-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.beranda-action {
+    display: flex;
+    flex-direction: column;
+    min-height: 140px;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.beranda-action .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.beranda-action strong {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.beranda-action span {
+    margin-top: auto;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.beranda-action--lost {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.beranda-action--lost span {
+    color: #c7d4e8;
+}
+
+.beranda-action--found {
+    color: #4a3d00;
+    background: var(--color-accent);
+}
+
+.beranda-action--found span {
+    color: #7a6500;
+}
+
+.beranda-activity {
+    align-items: flex-start;
+}
+
+.beranda-activity .item-row__thumb {
+    width: 64px;
+    height: 64px;
+    margin-top: 2px;
+}
+
+.beranda-activity__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.beranda-activity .badge {
+    margin-top: 0;
+    font-size: 10px;
+}
+
+.beranda-activity__pos {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin: 6px 0 0;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.beranda-activity__pos .icon {
+    width: 14px;
+    height: 14px;
+}
+
+.beranda-stats {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.beranda-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 112px;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.beranda-stat strong {
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.beranda-stat--blue {
+    color: #9cc0f2;
+    background: #004c99;
+}
+
+.beranda-stat--blue .icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 4px;
+}
+
+.beranda-stat--blue span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.beranda-stat--gray {
+    align-items: center;
+    color: var(--color-primary);
+    background: #e2e4e8;
+    text-align: center;
+}
+
+.beranda-stat--gray span {
+    color: #374151;
+    font-size: 11px;
+}
