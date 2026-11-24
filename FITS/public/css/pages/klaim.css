@@ -1,0 +1,380 @@
+.klaim {
+    padding-top: 34px;
+}
+
+.klaim .required {
+    color: #e11d2a;
+}
+
+.klaim-steps {
+    padding: 0 18px;
+}
+
+.klaim-lead {
+    margin: 46px 24px 26px;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.klaim-submit {
+    margin-top: 32px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Detail barang (ajukan klaim) */
+
+.klaim-detail {
+    padding-top: 54px;
+}
+
+.klaim-detail__photo {
+    position: relative;
+}
+
+.klaim-detail__photo img {
+    width: 100%;
+    height: 276px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.klaim-detail__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #1f1a00;
+    background: #fbe39b;
+    font-weight: 600;
+}
+
+.klaim-detail__title {
+    margin: 18px 0 0;
+    color: var(--color-navy);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.klaim-detail__found {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 4px 0 0;
+    color: #4b5563;
+    font-size: 13px;
+}
+
+.klaim-detail__found .icon {
+    width: 14px;
+    height: 14px;
+}
+
+.klaim-info {
+    margin-top: 16px;
+    padding: 4px 16px;
+}
+
+.klaim-info .info-list div {
+    padding: 16px 0;
+}
+
+.klaim-info dt,
+.klaim-info dd {
+    font-size: 14px;
+}
+
+.klaim-info dd {
+    font-weight: 500;
+}
+
+.klaim-status {
+    color: #c79a00;
+    background: #fdf2c8;
+    border: 1px solid #f2d36b;
+    font-weight: 500;
+}
+
+.klaim-alert {
+    margin-top: 16px;
+    font-size: 13px;
+}
+
+/* Pertanyaan verifikasi */
+
+.klaim-question {
+    padding: 16px;
+}
+
+.klaim-question + .klaim-question {
+    margin-top: 16px;
+}
+
+.klaim-question__no {
+    margin: 0;
+    color: var(--color-navy);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.klaim-question__text {
+    display: block;
+    margin: 6px 0 12px;
+    color: var(--color-title);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.klaim-question .input {
+    height: 46px;
+    background: #f3f4f6;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.klaim-hint {
+    display: flex;
+    gap: 8px;
+    margin: 22px 8px 0;
+    color: #6b7280;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.klaim-hint .icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Unggah bukti */
+
+.klaim-item {
+    display: flex;
+    overflow: hidden;
+    border-color: #c9cdd6;
+    border-radius: 6px;
+}
+
+.klaim-item img {
+    width: 116px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.klaim-item > div {
+    padding: 18px 16px;
+}
+
+.klaim-item h2 {
+    margin: 0 0 8px;
+    color: var(--color-title);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.klaim-item p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 0;
+    color: var(--color-title);
+    font-size: 12px;
+}
+
+.klaim-item p .icon {
+    width: 16px;
+    height: 16px;
+    color: #4b5563;
+}
+
+.klaim-item small {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+}
+
+.klaim-upload-title {
+    margin: 30px 0 0;
+    color: var(--color-title);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.klaim-upload-note {
+    margin: 6px 0 10px;
+    color: #4b5563;
+    font-size: 11px;
+}
+
+.klaim-upload {
+    min-height: 82px;
+    color: var(--color-navy);
+    background: transparent;
+    border-width: 1.5px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.klaim-upload .icon {
+    width: 22px;
+    height: 22px;
+    color: #4b5563;
+}
+
+.klaim-honesty {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 18px 16px;
+    background: #f1f2f4;
+    border-radius: 6px;
+    color: #4b5563;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.klaim-honesty input {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--color-navy);
+}
+
+.klaim-honesty strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--color-title);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.klaim-warning {
+    margin-top: 24px;
+    padding: 12px 12px;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.klaim-warning b {
+    color: var(--color-danger);
+}
+
+/* Klaim berhasil */
+
+.klaim-success {
+    margin-top: 32px;
+    padding: 24px;
+    text-align: center;
+    border-color: #c9cdd6;
+    border-radius: 6px;
+}
+
+.klaim-success .success-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.klaim-success .success-icon .icon {
+    width: 26px;
+    height: 26px;
+}
+
+.klaim-success h1 {
+    margin: 18px 0 0;
+    color: var(--color-title);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.klaim-success p {
+    margin: 10px 20px 0;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.klaim-section-title {
+    margin: 32px 0 12px;
+    color: var(--color-title);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.klaim-pickup {
+    margin: 0;
+    overflow: hidden;
+    background: #f7f8fa;
+    border: 1px solid #c9cdd6;
+    border-radius: 6px;
+}
+
+.klaim-pickup div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid #dde1e8;
+}
+
+.klaim-pickup div:last-child {
+    border-bottom: 0;
+}
+
+.klaim-pickup dt {
+    color: #4b5563;
+    font-size: 13px;
+}
+
+.klaim-pickup dd {
+    margin: 0;
+    color: var(--color-title);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.klaim-pickup__code {
+    color: var(--color-navy) !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+}
+
+.klaim-pickup__deadline {
+    color: var(--color-danger) !important;
+}
+
+.klaim-final-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 50px;
+}
+
+.klaim-final-actions .button {
+    min-height: 46px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.klaim-home {
+    color: var(--color-navy);
+    border: 1.5px solid var(--color-navy);
+    box-shadow: none;
+}
+
+.klaim-copied {
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    color: var(--color-primary);
+    background: #edf3f9;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+}
