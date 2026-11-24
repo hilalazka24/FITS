@@ -1,0 +1,1004 @@
+/*
+ * Komponen bersama untuk semua halaman FITS (dimuat lewat layouts/fits.blade.php).
+ * Warna dasar diambil dari global.css (--color-primary, --color-accent, dst.).
+ */
+
+:root {
+    --color-navy: #00285a;
+    --color-blue: #0d4db3;
+    --color-blue-light: #3a6fd8;
+    --color-page: #f6f7f9;
+    --color-title: #1a1d23;
+    --color-line: #dde1e8;
+    --color-success: #27c840;
+    --color-success-soft: #e3f7e8;
+    --color-success-text: #15803d;
+    --color-danger: #b91c1c;
+    --color-danger-soft: #fde4e4;
+    --color-warning-soft: #fbf3df;
+    --color-warning-line: #f2deaa;
+    --color-info-soft: #e6ecf8;
+    --app-width: 402px;
+    --app-bar-height: 100px;
+    --bottom-nav-height: 64px;
+    --radius-lg: 16px;
+}
+
+/* ---------- Bingkai layar ---------- */
+
+.fits-app {
+    background: #e9edf2;
+}
+
+.app-frame {
+    position: relative;
+    width: 100%;
+    max-width: var(--app-width);
+    min-height: 100vh;
+    min-height: 100svh;
+    margin-inline: auto;
+    background: var(--color-page);
+}
+
+.app-frame.has-nav {
+    padding-bottom: calc(var(--bottom-nav-height) + 24px);
+}
+
+.page {
+    padding: 16px;
+}
+
+.page-title {
+    margin: 0;
+    color: var(--color-title);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.page-lead {
+    margin: 8px 0 0;
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 24px 0 12px;
+}
+
+.section-title {
+    margin: 0;
+    color: var(--color-title);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.section-link .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.eyebrow {
+    margin: 0;
+    color: #4b5563;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+/* ---------- Header (app bar) ---------- */
+
+.app-bar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: var(--app-bar-height);
+    padding: 48px 16px 12px;
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.app-bar__back {
+    display: inline-flex;
+    color: inherit;
+}
+
+.app-bar__title {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.app-bar--center .app-bar__title {
+    padding-left: 52px;
+    text-align: center;
+}
+
+.app-bar__brand {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.app-bar__bell {
+    display: inline-flex;
+    margin-right: auto;
+    margin-left: 8px;
+}
+
+.app-bar__avatar {
+    margin-left: auto;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.app-bar__avatar img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid #c9d8ef;
+    border-radius: 50%;
+}
+
+/* ---------- Navigasi bawah ---------- */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    max-width: var(--app-width);
+    height: var(--bottom-nav-height);
+    background: #f7f8fa;
+    border-top: 1px solid #d3d8e0;
+    transform: translateX(-50%);
+}
+
+.bottom-nav__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #4b5563;
+    font-size: 11px;
+    line-height: 14px;
+    text-decoration: none;
+}
+
+.bottom-nav__item.is-active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.bottom-nav__item.is-active::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 18%;
+    right: 18%;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 0 0 3px 3px;
+}
+
+/* ---------- Kartu ---------- */
+
+.card {
+    background: var(--color-white);
+    border: 1px solid #e4e7ec;
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 8px #0f1b3308;
+}
+
+.card-pad {
+    padding: 16px;
+}
+
+.card + .card {
+    margin-top: 12px;
+}
+
+/* ---------- Tombol tambahan (melengkapi .button di global.css) ---------- */
+
+.button-block {
+    display: flex;
+    width: 100%;
+}
+
+.button .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.button-with-icon {
+    gap: 10px;
+}
+
+.button-navy {
+    color: var(--color-white);
+    background: var(--color-navy);
+    box-shadow: 0 3px 8px #00285a33;
+}
+
+.button-navy:hover {
+    background: #001d42;
+}
+
+.button-blue {
+    color: var(--color-white);
+    background: linear-gradient(90deg, var(--color-blue), var(--color-blue-light));
+    box-shadow: 0 4px 10px #0d4db333;
+}
+
+.button-blue:hover {
+    background: var(--color-blue);
+}
+
+.button-outline {
+    color: var(--color-navy);
+    background: var(--color-white);
+    border: 1.5px solid var(--color-navy);
+}
+
+.button-outline-blue {
+    color: var(--color-blue);
+    background: var(--color-white);
+    border: 2px solid var(--color-blue);
+}
+
+.button-gray {
+    color: #374151;
+    background: #e5e7eb;
+}
+
+.button-danger {
+    color: var(--color-white);
+    background: var(--color-danger);
+}
+
+.button-disabled,
+.button:disabled {
+    color: #1f2937;
+    background: #c4c4c4;
+    box-shadow: 0 3px 5px #00000026;
+    opacity: 1;
+}
+
+.button-caps {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.button-sm {
+    min-height: 36px;
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.button-pill {
+    border-radius: 999px;
+}
+
+/* ---------- Badge status ---------- */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    white-space: nowrap;
+    border-radius: 999px;
+}
+
+.badge .icon {
+    width: 15px;
+    height: 15px;
+}
+
+.badge-green {
+    color: var(--color-success-text);
+    background: var(--color-success-soft);
+}
+
+.badge-yellow {
+    color: #3b3000;
+    background: var(--color-accent);
+}
+
+.badge-yellow-soft {
+    color: #8a6a00;
+    background: #fdf0c2;
+}
+
+.badge-red-soft {
+    color: #9b1c1c;
+    background: #fde2e2;
+}
+
+.badge-gray {
+    color: #4b5563;
+    background: #e5e7eb;
+}
+
+.badge-square {
+    border-radius: 6px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+/* ---------- Chip pilihan (radio/checkbox) ---------- */
+
+.chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip-group--scroll {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.chip-group--scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.chip {
+    position: relative;
+    display: inline-flex;
+}
+
+.chip input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.chip span,
+a.chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 6px 18px;
+    color: #374151;
+    background: var(--color-white);
+    border: 1px solid #d4d8e0;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.chip input:checked + span,
+a.chip.is-active {
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.chip input:focus-visible + span {
+    outline: 3px solid #7aafe8;
+    outline-offset: 2px;
+}
+
+/* Chip kotak abu-abu (pilihan kategori di form) */
+.chip--box span {
+    min-height: 38px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #0000000d;
+}
+
+.chip--box input:checked + span {
+    color: var(--color-title);
+    background: #e5e7eb;
+    border: 2px solid var(--color-primary);
+}
+
+/* ---------- Form ---------- */
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.field-label {
+    color: var(--color-title);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.field-label .required {
+    color: var(--color-danger);
+}
+
+.input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    padding: 0 16px;
+    color: var(--color-title);
+    background: var(--color-white);
+    border: 1px solid #d4d8e0;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+textarea.input {
+    height: auto;
+    min-height: 96px;
+    padding: 14px 16px;
+    resize: vertical;
+}
+
+.input::placeholder {
+    color: #8a93a3;
+    opacity: 1;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #5e92c6;
+    box-shadow: 0 0 0 3px #00367014;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon .input {
+    padding-right: 48px;
+}
+
+.input-icon > .icon {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    color: #6b7280;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.input-icon--left .input {
+    padding-right: 16px;
+    padding-left: 48px;
+}
+
+.input-icon--left > .icon {
+    right: auto;
+    left: 14px;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 164px;
+    padding: 16px;
+    overflow: hidden;
+    color: #4b5563;
+    background: var(--color-white);
+    border: 2px dashed #c3c8d2;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-box input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.upload-box img {
+    max-height: 200px;
+    border-radius: 8px;
+}
+
+.upload-box .icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* ---------- Stepper (langkah 1-2-3) ---------- */
+
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    list-style: none;
+    margin: 0;
+}
+
+.stepper li {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.stepper li::before,
+.stepper li::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: #d6dae3;
+}
+
+.stepper__dot {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: #4b5563;
+    background: var(--color-white);
+    border: 2px solid #c9cdd6;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.stepper .is-done .stepper__dot {
+    color: var(--color-title);
+    box-shadow: 0 2px 4px #0000002e;
+}
+
+.stepper .is-current .stepper__dot {
+    color: var(--color-title);
+    background: var(--color-accent);
+    border-color: #e6bd00;
+    box-shadow: 0 2px 4px #0000002e;
+}
+
+.stepper-caption {
+    margin: 14px 0 0;
+    color: var(--color-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Stepper kotak biru tua (alur klaim) */
+.stepper--square {
+    padding: 0 18px;
+}
+
+.stepper--square li:first-child::before,
+.stepper--square li:last-child::after {
+    display: none;
+}
+
+.stepper--square li:first-child,
+.stepper--square li:last-child {
+    flex: none;
+}
+
+.stepper--square .stepper__dot {
+    border-radius: 10px;
+    color: #4b5563;
+    border-color: #c9cdd6;
+}
+
+.stepper--square .is-done .stepper__dot,
+.stepper--square .is-current .stepper__dot {
+    color: var(--color-white);
+    background: var(--color-navy);
+    border-color: var(--color-navy);
+    box-shadow: none;
+}
+
+.stepper--square .is-current .stepper__dot {
+    box-shadow: 0 0 0 3px #c9d3e3;
+}
+
+.stepper--square .is-done::after,
+.stepper--square .is-done + .is-done::before,
+.stepper--square .is-done + .is-current::before {
+    background: var(--color-navy);
+}
+
+/* ---------- Kotak pesan ---------- */
+
+.alert {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    color: var(--color-text);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.alert p {
+    margin: 0;
+}
+
+.alert .icon {
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+}
+
+.alert-info {
+    background: var(--color-info-soft);
+    border-color: #cfdaf0;
+}
+
+.alert-warning {
+    color: #4a3b00;
+    background: var(--color-warning-soft);
+    border-color: var(--color-warning-line);
+}
+
+.alert-warning .icon {
+    color: #c79a00;
+}
+
+.alert-danger {
+    color: #7f1d1d;
+    background: var(--color-danger-soft);
+    border-color: #f5c2c2;
+}
+
+.alert-danger .icon {
+    color: var(--color-danger);
+}
+
+/* ---------- Halaman sukses ---------- */
+
+.success-icon {
+    display: grid;
+    place-items: center;
+    width: 84px;
+    height: 84px;
+    margin-inline: auto;
+    color: var(--color-white);
+    background: var(--color-success);
+    border-radius: 18px;
+}
+
+.success-icon .icon {
+    width: 36px;
+    height: 36px;
+    stroke-width: 2.4;
+}
+
+/* ---------- Daftar label - nilai ---------- */
+
+.info-list {
+    margin: 0;
+}
+
+.info-list div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.info-list div:last-child {
+    border-bottom: 0;
+}
+
+.info-list dt {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.info-list dd {
+    margin: 0;
+    color: var(--color-title);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* ---------- Kartu barang (gambar kiri, teks kanan) ---------- */
+
+.item-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.item-row__thumb {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    object-fit: cover;
+    background: #eef1f6;
+    border-radius: 8px;
+}
+
+.item-row__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-row__title {
+    margin: 0;
+    color: var(--color-title);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.item-row__meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 4px 0 0;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.item-row__meta .icon {
+    width: 15px;
+    height: 15px;
+    color: #4b5563;
+}
+
+.item-row .badge {
+    margin-top: 8px;
+}
+
+/* ---------- Tombol melayang (FAB) ---------- */
+
+.fab {
+    position: fixed;
+    right: max(16px, calc(50% - var(--app-width) / 2 + 16px));
+    bottom: calc(var(--bottom-nav-height) + 16px);
+    z-index: 25;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    color: #3b3000;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px #00000033;
+}
+
+.fab--square {
+    border-radius: 16px;
+}
+
+.fab .icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* ---------- Saklar (toggle) ---------- */
+
+.switch {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.switch span {
+    width: 44px;
+    height: 24px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    transition: background-color 150ms ease;
+}
+
+.switch span::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+    background: var(--color-white);
+    border-radius: 50%;
+    box-shadow: 0 1px 2px #0000004d;
+    transition: transform 150ms ease;
+}
+
+.switch input:checked + span {
+    background: var(--color-primary);
+}
+
+.switch input:checked + span::after {
+    transform: translateX(20px);
+}
+
+.switch input:focus-visible + span {
+    outline: 3px solid #7aafe8;
+    outline-offset: 2px;
+}
+
+/* ---------- Dialog / modal ---------- */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    padding: 22px;
+    background: #0f172a8c;
+    backdrop-filter: blur(2px);
+}
+
+.modal {
+    width: 100%;
+    max-width: 358px;
+    padding: 24px;
+    background: var(--color-white);
+    border-radius: 16px;
+    text-align: center;
+}
+
+/* ---------- Kecil-kecil ---------- */
+
+.stack-12 > * + * {
+    margin-top: 12px;
+}
+
+.stack-16 > * + * {
+    margin-top: 16px;
+}
+
+.divider {
+    height: 1px;
+    margin: 16px 0;
+    background: var(--color-line);
+    border: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ---------- Halaman sukses (laporan / klaim berhasil) ---------- */
+
+.frame-gradient {
+    background: linear-gradient(180deg, #f3f5f9, #e6eaf1);
+}
+
+.success-page {
+    padding: 56px 20px 32px;
+    text-align: center;
+}
+
+.success-title {
+    margin: 26px 0 0;
+    color: #0f2747;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 36px;
+}
+
+.success-text {
+    margin: 14px 12px 0;
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.success-card {
+    margin-top: 44px;
+    padding: 24px 26px;
+    text-align: left;
+    border: 0;
+    box-shadow: 0 8px 20px #0f1b3314;
+}
+
+.success-card .eyebrow {
+    color: #6b7280;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.success-card__number {
+    margin: 6px 0 22px;
+    color: #0f2747;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.success-card__value {
+    margin: 6px 0 0;
+    color: var(--color-title);
+    font-size: 16px;
+}
+
+.success-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 108px;
+}
+
+.success-actions .button {
+    border-radius: 14px;
+    font-size: 15px;
+}
+
+.success-actions .button-outline {
+    border-width: 2px;
+}
+
+.frame-white {
+    background: var(--color-white);
+}
+
+.stepper--round .stepper__dot {
+    border-radius: 50%;
+}
