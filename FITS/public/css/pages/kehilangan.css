@@ -1,0 +1,147 @@
+.kehilangan {
+    padding-top: 24px;
+}
+
+.kehilangan-title {
+    color: #0f2747;
+    font-size: 26px;
+}
+
+.kehilangan .input {
+    height: 54px;
+}
+
+.kehilangan .chip--box span {
+    min-height: 40px;
+    padding-inline: 20px;
+    font-size: 14px;
+}
+
+.kehilangan .page-lead {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.kehilangan .divider {
+    margin: 20px 0 0;
+}
+
+.kehilangan-first-field {
+    margin-top: 14px;
+}
+
+.kehilangan .field-label {
+    color: #0f2747;
+}
+
+.kehilangan fieldset {
+    margin-inline: 0;
+    padding: 0;
+    border: 0;
+}
+
+.kehilangan legend {
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.kehilangan-submit {
+    margin-top: 28px;
+}
+
+/* Detail laporan kehilangan */
+
+.kehilangan-hint {
+    background: linear-gradient(90deg, #dde5f4, #e9eef8);
+}
+
+.kehilangan-label-blue {
+    color: var(--color-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.kehilangan-secret {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 44px 0 0;
+    padding-bottom: 12px;
+    color: var(--color-title);
+    border-bottom: 1px solid #c9cdd6;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.kehilangan-secret .icon {
+    width: 18px;
+    height: 18px;
+    color: #4b4300;
+    fill: #4b4300;
+}
+
+.kehilangan-secret-note {
+    margin: 16px 0 20px;
+    color: #374151;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.kehilangan-question {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 26px;
+    background: #f3f2f4;
+    border-radius: 16px;
+}
+
+.kehilangan-question .input {
+    height: 56px;
+    border-radius: 4px;
+}
+
+.kehilangan-question .input + .kehilangan-question__label {
+    margin-top: 12px;
+}
+
+.kehilangan-question__label {
+    color: #4b5563;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.kehilangan-question__label .required,
+.kehilangan-detail .required {
+    color: #e11d2a;
+}
+
+.kehilangan-add {
+    gap: 6px;
+    margin-top: 22px;
+    color: var(--color-blue);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.kehilangan-add .icon {
+    width: 22px;
+    height: 22px;
+}
+
+.kehilangan-send {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.kehilangan-footnote {
+    margin: 14px 16px 8px;
+    color: #374151;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
